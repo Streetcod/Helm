@@ -19,12 +19,12 @@ spec:
                   image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}"
                   ports:
                     - containerPort: {{.Values.frontend.ContainerPort}}
-            affinity:
-                nodeAffinity:
-                    requiredDuringSchedulingIgnoredDuringExecution:
-                        nodeSelectorTerms:
-                        - matchExpressions:
-                          - key: role
-                            operator: In
-                            values:
-                                - general
+            # affinity:
+            #     nodeAffinity:
+            #         requiredDuringSchedulingIgnoredDuringExecution:
+            #             nodeSelectorTerms:
+            #             - matchExpressions:
+            #               - key: role
+            #                 operator: In
+            #                 values:
+            #                     - general
