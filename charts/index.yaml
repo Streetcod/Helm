@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  streetcode:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-10-09T04:02:09.42611185+03:00"
+    description: A Helm chart for Kubernetes
+    digest: 0dc11a8eebb1ae92cf96728a5a50116650fb5f72db89a988ace21f08d68c7c7b
+    name: streetcode
+    type: application
+    urls:
+    - streetcode-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-10-09T04:02:09.425572756+03:00"

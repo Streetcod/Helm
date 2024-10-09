@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+    name: backend
+    labels:
+        app: backend
+spec:
+    replicas: {{ .Values.backend.replicas | default 1 }}
+    selector:
+        matchLabels:
+            app: backend
+    template:
+        metadata:
+            labels:
+                app: backend
+        spec:
+            containers:
+                - name: backend
+                  image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+                  env:
+                    - name: STREETCODE_ConnectionStrings__DefaultConnection
+                      valueFrom:
+                        configMapKeyRef:
+                            name: backend-config
+                            key: connection_string
+                    - name: ASPNETCORE_URLS
+                      value: {{.Values.backend.urls}}
